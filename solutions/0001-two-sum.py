@@ -1,7 +1,7 @@
 import unittest
 
 
-def two_sum(nums: list[int], target: int):
+def two_sum(nums: list[int], target: int) -> list[int]:
     seen = {}
     for i in range(len(nums)):
         diff = target - nums[i]
