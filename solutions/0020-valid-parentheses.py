@@ -16,7 +16,7 @@ def is_valid(text: str) -> bool:
                 return False
             stack.pop()
 
-    return True if len(stack) == 0 else False
+    return not len(stack)
 
 
 class TestValidParentheses(unittest.TestCase):
