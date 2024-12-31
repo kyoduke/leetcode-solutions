@@ -6,11 +6,10 @@ def reverse_words(text: str) -> str:
     result = ""
 
     for word in words:
+        result += " "
         result += word[::-1]
-        if word is not words[-1]:
-            result += " "
 
-    return result
+    return result[1:]
 
 
 class TestReverseWords(unittest.TestCase):
