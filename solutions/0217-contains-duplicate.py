@@ -6,25 +6,11 @@ import test
 
 class Solution:
     def containsDuplicate(self, nums: List[int]) -> bool:
-        content = {}
-        l = 0
-        r = len(nums) - 1
-
-        while l < r:
-            l_number = nums[l]
-            r_number = nums[r]
-            if l_number == r_number:
+        seen = set()
+        for num in nums:
+            if num in seen:
                 return True
-            if content.get(l_number) is not None or content.get(r_number) is not None:
-                return True
-            content[nums[l]] = l
-            content[nums[r]] = r
-            l += 1
-            if l == (r - 1):
-                if content.get(nums[l]) is not None:
-                    return True
-                break
-            r -= 1
+            seen.add(num)
         return False
 
 
